@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>متتبع النظام الغذائي 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>نظامي الغذائي 2025</h1>
+    
+    <div id="calendar-container"></div>
+
+    <div id="meal-tracker" class="hidden">
+        <h2>تفاصيل اليوم: <span id="selected-date"></span></h2>
+        
+        <!-- الفطور -->
+        <div class="meal">
+            <h3>الفطور (الخضار الفاتحة):</h3>
+            <ul>
+                <li><label><input type="checkbox" class="item" data-meal="breakfast" value="أولاً: السلطة الخضراء"> سلطة خضراء</label>
+                    <label><input type="checkbox" class="sub"> استبدال</label></li>
+                <li><label><input type="checkbox" class="item" data-meal="breakfast" value="٢- ثلاث بيضات"> ٣ بيضات</label>
+                    <label><input type="checkbox" class="sub"> استبدال</label></li>
+                <li><label><input type="checkbox" class="item" data-meal="breakfast" value="٣- قطعة جبن من الشقائق"> قطعة جبن</label>
+                    <label><input type="checkbox" class="sub"> استبدال</label></li>
+                <li><label><input type="checkbox" class="item" data-meal="breakfast" value="٤- مرقة واعدة أو حبة ثوم"> مرقة/ثوم</label>
+                    <label><input type="checkbox" class="sub"> استبدال</label></li>
+                <li><label><input type="checkbox" class="item" data-meal="breakfast" value="٥- ملعقة صغيرة سمك مملح"> سمك مملح</label>
+                    <label><input type="checkbox" class="sub"> استبدال</label></li>
+            </ul>
+        </div>
+
+        <!-- الغداء -->
+        <div class="meal">
+            <h3>الغداء (الثانية: عصير خضراء):</h3>
+            <ul>
+                <li><label><input type="checkbox" class="item" data-meal="lunch" value="١- علبة زبادي"> علبة زبادي</label>
+                    <label><input type="checkbox" class="sub"> استبدال</label></li>
+                <li><label><input type="checkbox" class="item" data-meal="lunch" value="٢- قطعة من لحم الضأن"> لحم ضأن</label>
+                    <label><input type="checkbox" class="sub"> استبدال</label></li>
+                <li><label><input type="checkbox" class="item" data-meal="lunch" value="٣- تفاحة"> تفاحة</label>
+                    <label><input type="checkbox" class="sub"> استبدال</label></li>
+            </ul>
+        </div>
+
+        <!-- العشاء -->
+        <div class="meal">
+            <h3>العشاء (الثالثة: الفاصوليا):</h3>
+            <ul>
+                <li><label><input type="checkbox" class="item" data-meal="dinner" value="١- ١٥٠ غ .. قطعة لحم أو دجاج مشوي"> لحم/دجاج</label>
+                    <label><input type="checkbox" class="sub"> استبدال</label></li>
+                <li><label><input type="checkbox" class="item" data-meal="dinner" value="٢- كوبان خضار مطبوخة مع اللحم"> خضار مطبوخة</label>
+                    <label><input type="checkbox" class="sub"> استبدال</label></li>
+                <li><label><input type="checkbox" class="item" data-meal="dinner" value="٣- حبة تفاح"> تفاحة</label>
+                    <label><input type="checkbox" class="sub"> استبدال</label></li>
+            </ul>
+        </div>
+
+        <!-- العشاء (الرابعة: الشكشوكة): -->
+        <div class="meal">
+            <h3>العشاء (الرابعة: الشكشوكة):</h3>
+            <ul>
+                <li><label><input type="checkbox" class="item" data-meal="dinner2" value="١- ٢٠٠ جرام جبنة قريش"> جبنة قريش</label>
+                    <label><input type="checkbox" class="sub"> استبدال</label></li>
+            </ul>
+        </div>
+
+        <button onclick="checkCommitment()">حفظ اليوم</button>
+        <div id="message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

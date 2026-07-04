@@ -1,0 +1,42 @@
+const startDate = new Date(2025, 0, 1); // 1 يناير 2025
+const endDate = new Date(2025, 11, 31); // 31 ديسمبر 2025
+
+function initCalendar() {
+    const container = document.getElementById('calendar-container');
+    let current = startDate;
+    
+    while (current <= endDate) {
+        const dayDiv = document.createElement('div');
+        dayDiv.className = 'day';
+        dayDiv.innerText = current.getDate();
+        dayDiv.onclick = () => openTracker(current);
+        container.appendChild(dayDiv);
+        current.setDate(current.getDate() + 1);
+    }
+}
+
+function openTracker(date) {
+    document.getElementById('meal-tracker').classList.remove('hidden');
+    document.getElementById('selected-date').innerText = date.toLocaleDateString('ar-SA');
+    document.getElementById('message').innerText = '';
+}
+
+function checkCommitment() {
+    const items = document.querySelectorAll('.item');
+    const subs = document.querySelectorAll('.sub');
+    let checkedItems = 0;
+    let usedSub = false;
+
+    items.forEach(i => { if(i.checked) checkedItems++; });
+    subs.forEach(s => { if(s.checked) usedSub = true; });
+
+    const totalItems = items.length; // 14 صنفاً حسب الصورة
+
+    if (checkedItems === totalItems && !usedSub) {
+        document.getElementById('message').innerText = "أحسنت! التزام 100%.. أنت رائع، استمر في هذا الإنجاز!";
+    } else {
+        document.getElementById('message').innerText = "تم التسجيل (تعديل: " + (usedSub ? "استبدال" : "وجبات ناقصة") + ")";
+    }
+}
+
+initCalendar();
